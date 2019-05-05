@@ -1,0 +1,19 @@
+@mixin tablet{
+    @media only screen and(min-width: $tablet-width){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media only screen and(min-width: $desktop-width){
+        @content;
+    }
+}
+
+@mixin flexBox($direction, $justify-content, $align-items){
+    display:flex;
+    flex-direction: $direction;
+    justify-content:$justify-content;
+    align-items: $align-items;
+}
+

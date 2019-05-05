@@ -5,18 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Instanews</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/font.css" />
+    <link rel="stylesheet" href="./build/css/style.min.css" />
   </head>
   <body>
-    <div class="initial-page">
-      <div class="top">
-        <div class="nyt-logo">
+      <header>
+        <div class="logo-div">
           <img src="./assets/images/nyt-logo.svg" alt="NYT LOGO"/>
         </div>
-        <div class="selector">
-          <label for="section-select">Choose a section:</label>
-          <select id="section-select">
+        <div class="selector-div">
+          <label for="selector">Choose a section:</label>
+          <select id="selector">
             <option value=""> Sections ...</option>
             <option value="arts">Arts</option>
             <option value="science">Science</option>
@@ -27,17 +25,16 @@
             <option value="insider">Insider</option>
           </select>
         </div>
-        <div class="loading">
-          <img src="./assets/images/ajax-loader.gif" alt="loading" />
+        <div class="loading-div">
+          <img src="./assets/images/ajax-loader.gif" alt="Loading" />
         </div>
-      </div>
-      <div class="stories">
+      </header>
+      <article class="stories">
         <!-- ajax -->
-      </div>
-      <div class="footer">
+      </article>
+      <footer>
         <p>&copy; Copyright 2019 INSTANEWS</p>
-      </div>
-    </div>
+      </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="./build/js/script.min.js"></script>
   </body>

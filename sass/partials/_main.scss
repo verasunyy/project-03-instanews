@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+a{
+  text-decoration: none;
+  color:$primary-color;
+  &:hover{
+    color: darken($primary-color, 25%);
+  } 
+}
+
+body {
+  font-family: $font-family;
+  color: $primary-color;
+  font-weight: 300;
+  margin: 0 auto;
+  background-color: $background-color;
+  min-height: 100vh;
+
+  text-align: center;
+  @include flexBox(column, center, center);
+  @include desktop {
+    text-align: left;
+  }
+}
+
+header {
+  width: 100%;
+  @include flexBox(column, center, center);
+  flex-grow: 1;
+  padding: 2rem 2rem 1rem;
+  &.active{
+    flex-grow:0;
+  }
+  @include tablet {
+    flex-direction: row;
+    &.active{
+      padding: 1.5rem 3rem 2rem;
+    }
+  }
+  @include desktop {
+    justify-content: flex-start;
+  }
+}
+
+.logo-div {
+  .active &{ 
+    img{
+      width: 150px;
+    }
+  }
+  @include tablet {
+    .active &{
+      flex:0 1 25%;
+      img{
+        width: 80px;
+      }
+    }
+  }
+  @include desktop {
+    .active &{
+      flex:0 1 15%;
+    }
+  }
+}
+
+
+
+.selector-div {
+  font-size: 0.87rem;
+  padding: 1rem 2rem 2rem;
+  @include tablet {
+    font-size: 1rem;
+    .active &{
+      flex:0 1 75%;
+      text-align: left;
+      padding-bottom: 1.5rem;
+    }
+  }
+  @include desktop {
+    .active &{
+      flex:0 1 85%;
+    }
+  }
+  label {
+    display: block;
+    font-weight: 500;
+    padding: 10px 0;
+  }
+  select {
+    background: linear-gradient(to right, white 80%, orange 90%);
+    width: 6.5rem;
+    @include tablet {
+      width: 7rem;
+    }
+  }
+}
+.loading-div {
+  img {
+    width: 3rem;
+  }
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+article {
+  @include flexBox(column, center, center);
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.story {
+  @include flexBox(row, center, flex-end);
+  flex-basis: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  height: 400px;
+  @include tablet {
+    flex-basis: 50%;
+  }
+  @include desktop {
+    flex-basis: 25%;
+  }
+  &.abstract {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    text-align: left;
+    padding: 8px;
+  }
+}
+
+footer {
+  padding: 0.8rem 2rem 2rem;
+  width: 100%;
+  flex-grow: 0;
+}

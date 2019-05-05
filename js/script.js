@@ -1,16 +1,13 @@
-$('#section-select').on('change', function () {
-    $(".loading").show();
-    
-// add a class to the header here e.g. .addClass('active');
+$('#selector').on('change', function () {
+    $(".loading-div").show();
+    $("header").addClass("active");
+    // $(".logo-div").addClass("active");
+    // $(".selector-div").addClass("active");
 
     const section = $(this).val();
     $(".stories").html("");
     if (section !== '') {
-        // console.log(selected);
         loadStories(section);
-        // change logo size
-        $(".nyt-logo img").addClass( "logo-img");
-    $(".top").addClass("top-w-article");
     }
 });
 function loadStories(section) {
@@ -31,7 +28,7 @@ function loadStories(section) {
                     let storyAbstract = value.abstract;
                     // console.log(storyAbstract);
                     // console.log(imageUrl);
-                    $(".stories").append(`<a href="${articleUrl}" target=blanck class="story" style="background-image: url(${imageUrl})"><div class="abstract">${storyAbstract}</div></a>`)
+                    $(".stories").append(`<a href="${articleUrl}" target=blanck class="story" style="background-image: url(${imageUrl})"><div class="abstract"><p>${storyAbstract}</p></div></a>`)
                 }
             })
         })
@@ -39,6 +36,6 @@ function loadStories(section) {
             $(".stories").append('Sorry there was an error.');
         })
         .always(function () {
-            $(".loading").hide();
+            $(".loading-div").hide();
         });
 }

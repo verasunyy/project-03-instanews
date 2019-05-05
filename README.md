@@ -1,4 +1,7 @@
+# Instanews
+Insranews is a a one-page, responsive website that allows a user to filter top news story catergories via the New York Times API.
 
+##
 
 
 
