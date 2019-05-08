@@ -1,3 +1,7 @@
+$(function() {
+    $('select').selectric();
+  });
+
 $('#selector').on('change', function () {
     $(".loading-div").show();
     $("header").addClass("active");
@@ -5,9 +9,13 @@ $('#selector').on('change', function () {
     // $(".selector-div").addClass("active");
 
     const section = $(this).val();
+
     $(".stories").html("");
-    if (section !== '') {
+    if (section !== 'section') {
         loadStories(section);
+    }
+    else{
+        $(".loading-div").hide();
     }
 });
 function loadStories(section) {
@@ -18,18 +26,15 @@ function loadStories(section) {
         .done(function (data) {
             console.log(data);
             // $(".stories").html("");
-            const validData = data.results.filter(item=> item.multimedia.length==5);
+            const validData = data.results.filter(item => item.multimedia.length == 5).slice(0, 12);
             $.each(validData, function (index, value) {
-
                 // console.log(index)
-                if (index < 16) {
-                    let imageUrl = value.multimedia[4].url;
-                    let articleUrl = value.url;
-                    let storyAbstract = value.abstract;
-                    // console.log(storyAbstract);
-                    // console.log(imageUrl);
-                    $(".stories").append(`<a href="${articleUrl}" target=blanck class="story" style="background-image: url(${imageUrl})"><div class="abstract"><p>${storyAbstract}</p></div></a>`)
-                }
+                let imageUrl = value.multimedia[4].url;
+                let articleUrl = value.url;
+                let storyAbstract = value.abstract;
+                // console.log(storyAbstract);
+                // console.log(imageUrl);
+                $(".stories").append(`<a href="${articleUrl}" target=blanck class="story" ><div class="background" style="background-image: url(${imageUrl})"><div class="abstract"><p>${storyAbstract}</p></div></div></a>`)
             })
         })
         .fail(function () {

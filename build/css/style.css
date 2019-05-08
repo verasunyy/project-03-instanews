@@ -404,36 +404,50 @@ header {
           -ms-flex-direction: row;
               flex-direction: row; }
       header.active {
-        padding: 1.5rem 3rem 2rem; } }
+        padding: 1rem 3rem 1rem; } }
   @media only screen and (min-width: 1000px) {
     header {
       -webkit-box-pack: start;
           -ms-flex-pack: start;
               justify-content: flex-start; } }
 
-.active .logo-div img {
-  width: 150px; }
-
-@media only screen and (min-width: 600px) {
-  .active .logo-div {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 25%;
-            flex: 0 1 25%; }
-    .active .logo-div img {
-      width: 80px; } }
-
-@media only screen and (min-width: 1000px) {
-  .active .logo-div {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 15%;
-            flex: 0 1 15%; } }
+.logo-div {
+  -webkit-transform: translate(0px, -5px);
+          transform: translate(0px, -5px);
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out; }
+  .active .logo-div img {
+    width: 150px; }
+  @media only screen and (min-width: 600px) {
+    .logo-div {
+      -webkit-transform: translate(-5px, 0px);
+              transform: translate(-5px, 0px); }
+      .active .logo-div {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 25%;
+                flex: 0 1 25%; }
+        .active .logo-div img {
+          width: 90px; } }
+  @media only screen and (min-width: 1000px) {
+    .logo-div {
+      -webkit-transform: translate(0px, -5px);
+              transform: translate(0px, -5px); }
+      .active .logo-div {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 15%;
+                flex: 0 1 15%; } }
 
 .selector-div {
+  -webkit-transition: padding 1s ease-in-out;
+  transition: padding 1s ease-in-out;
   font-size: 0.87rem;
   padding: 1rem 2rem 2rem; }
   @media only screen and (min-width: 600px) {
     .selector-div {
-      font-size: 1rem; }
+      font-size: 1rem;
+      padding-left: 3rem; }
       .active .selector-div {
         -webkit-box-flex: 0;
             -ms-flex: 0 1 75%;
@@ -441,21 +455,34 @@ header {
         text-align: left;
         padding-bottom: 1.5rem; } }
   @media only screen and (min-width: 1000px) {
-    .active .selector-div {
-      -webkit-box-flex: 0;
-          -ms-flex: 0 1 85%;
-              flex: 0 1 85%; } }
+    .selector-div {
+      padding-left: 4rem; }
+      .active .selector-div {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 85%;
+                flex: 0 1 85%; } }
   .selector-div label {
     display: block;
     font-weight: 500;
     padding: 10px 0; }
-  .selector-div select {
-    background: -webkit-gradient(linear, left top, right top, color-stop(80%, white), color-stop(90%, orange));
-    background: linear-gradient(to right, white 80%, orange 90%);
-    width: 6.5rem; }
+  .selector-div .selectric {
+    z-index: 1;
+    width: 7rem;
+    height: 1.5rem;
+    border-radius: 5px; }
+    .selector-div .selectric .button {
+      background: orange;
+      width: 1.5rem;
+      height: 1.5rem; }
+    .selector-div .selectric .label {
+      text-align: left;
+      padding-left: 16px;
+      height: 2rem;
+      line-height: 1.5rem;
+      margin: 0 auto; }
     @media only screen and (min-width: 600px) {
-      .selector-div select {
-        width: 7rem; } }
+      .selector-div .selectric {
+        width: 7.5rem; } }
 
 .loading-div {
   width: 100%;
@@ -463,6 +490,9 @@ header {
   display: none; }
   .loading-div img {
     width: 3rem; }
+  @media only screen and (min-width: 600px) {
+    .loading-div {
+      text-align: left; } }
 
 article {
   display: -webkit-box;
@@ -488,38 +518,63 @@ article {
           flex-wrap: wrap; } }
 
 .story {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  height: 400px; }
+  overflow: hidden; }
+  .story .background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position: relative;
+    height: 400px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.8;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    margin: 0 auto; }
+  .story:hover .background {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1); }
+  .story:hover .abstract {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
   @media only screen and (min-width: 600px) {
     .story {
       -ms-flex-preferred-size: 50%;
-          flex-basis: 50%; } }
+          flex-basis: 50%;
+      width: 100%; } }
   @media only screen and (min-width: 1000px) {
     .story {
       -ms-flex-preferred-size: 25%;
           flex-basis: 25%; } }
-  .story.abstract {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7)));
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  .story .abstract {
+    background: rgba(0, 0, 0, 0.7);
     text-align: left;
-    padding: 8px; }
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    width: 92%;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s; }
+    .story .abstract p {
+      margin: 0 auto;
+      padding: 8px 8px 26px 14px; }
 
 footer {
   padding: 0.8rem 2rem 2rem;
