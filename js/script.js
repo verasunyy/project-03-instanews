@@ -13,9 +13,12 @@ $('#selector').on('change', function () {
     $(".stories").html("");
     if (section !== 'section') {
         loadStories(section);
+
     }
     else{
         $(".loading-div").hide();
+        $("header").removeClass("active");
+
     }
 });
 function loadStories(section) {

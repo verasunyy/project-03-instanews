@@ -520,6 +520,7 @@ article {
 .story {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
+  width: 100%;
   overflow: hidden; }
   .story .background {
     display: -webkit-box;
@@ -539,7 +540,7 @@ article {
     background-repeat: no-repeat;
     background-position-x: center;
     background-position: relative;
-    height: 400px;
+    height: 420px;
     -webkit-transform: scale(1);
             transform: scale(1);
     opacity: 0.8;
