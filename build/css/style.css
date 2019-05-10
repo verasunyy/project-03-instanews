@@ -347,7 +347,7 @@ a {
   text-decoration: none;
   color: #ffffff; }
   a:hover {
-    color: #bfbfbf; }
+    color: #f2f2f2; }
 
 body {
   font-family: "Open Sans", Arial, sans-serif;
@@ -494,7 +494,7 @@ header {
     .loading-div {
       text-align: left; } }
 
-article {
+.stories {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -509,7 +509,7 @@ article {
       -ms-flex-align: center;
           align-items: center; }
   @media only screen and (min-width: 600px) {
-    article {
+    .stories {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
           -ms-flex-direction: row;
@@ -547,11 +547,11 @@ article {
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     margin: 0 auto; }
-  .story:hover .background {
+  .story:hover .background, .story:focus .background {
     opacity: 1;
     -webkit-transform: scale(1.1);
             transform: scale(1.1); }
-  .story:hover .abstract {
+  .story:hover .abstract, .story:focus .abstract {
     -webkit-transform: translateY(0);
             transform: translateY(0); }
   @media only screen and (min-width: 600px) {
@@ -563,6 +563,11 @@ article {
     .story {
       -ms-flex-preferred-size: 25%;
           flex-basis: 25%; } }
+  .story h2 {
+    margin: 0 auto;
+    padding: 8px 8px 26px 14px;
+    font-size: 1rem;
+    font-weight: 300; }
   .story .abstract {
     background: rgba(0, 0, 0, 0.7);
     text-align: left;
@@ -573,11 +578,9 @@ article {
     transition: -webkit-transform 0.5s;
     transition: transform 0.5s;
     transition: transform 0.5s, -webkit-transform 0.5s; }
-    .story .abstract p {
-      margin: 0 auto;
-      padding: 8px 8px 26px 14px; }
 
 footer {
+  font-size: 0.87rem;
   padding: 0.8rem 2rem 2rem;
   width: 100%;
   -webkit-box-flex: 0;

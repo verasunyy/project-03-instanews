@@ -28,7 +28,11 @@ function loadStories(section) {
                 let imageUrl = value.multimedia[4].url;
                 let articleUrl = value.url;
                 let storyAbstract = value.abstract;
-                $(".stories").append(`<a href="${articleUrl}" target=blanck class="story" ><div class="background" style="background-image: url(${imageUrl})"><div class="abstract"><p>${storyAbstract}</p></div></div></a>`)
+                $(".stories").append(`<a href="${articleUrl}" target=blanck class="story" >
+                <article class="background" style="background-image: url(${imageUrl})">
+                <h2 class="abstract">${storyAbstract}</h2>
+                </article>
+                </a>`)
             })
         })
         .fail(function () {
