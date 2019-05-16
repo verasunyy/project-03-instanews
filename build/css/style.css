@@ -455,30 +455,28 @@ header {
         text-align: left;
         padding-bottom: 1.5rem; } }
   @media only screen and (min-width: 1000px) {
-    .selector-div {
-      padding-left: 4rem; }
-      .active .selector-div {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 1 85%;
-                flex: 0 1 85%; } }
+    .active .selector-div {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 1 85%;
+              flex: 0 1 85%; } }
   .selector-div label {
     display: block;
     font-weight: 500;
-    padding: 10px 0; }
+    padding: 40px 0; }
   .selector-div .selectric {
     z-index: 1;
     width: 7rem;
-    height: 1.5rem;
+    height: 2rem;
     border-radius: 5px; }
     .selector-div .selectric .button {
       background: orange;
-      width: 1.5rem;
-      height: 1.5rem; }
+      width: 2rem;
+      height: 2rem; }
     .selector-div .selectric .label {
       text-align: left;
       padding-left: 16px;
       height: 2rem;
-      line-height: 1.5rem;
+      line-height: 2rem;
       margin: 0 auto; }
     @media only screen and (min-width: 600px) {
       .selector-div .selectric {
