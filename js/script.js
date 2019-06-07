@@ -28,19 +28,7 @@ $(function () {
             method: 'get',
             url: `https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=81xlA4cYvKGRAH8yiQiiE2CuHr82DZDM`
         })
-            .done(function (data) {
-                const validData = data.results.filter(item => item.multimedia.length == 5).slice(0, 12);
-                $.each(validData, function (index, value) {
-                    let imageUrl = value.multimedia[4].url;
-                    let articleUrl = value.url;
-                    let storyAbstract = value.abstract;
-                    $stories.append(`<a href="${articleUrl}" target=blanck class="story" >
-                <article class="background" style="background-image: url(${imageUrl})">
-                <h2 class="abstract">${storyAbstract}</h2>
-                </article>
-                </a>`)
-                })
-            })
+            .done(gettingContent(data))
             .fail(function () {
                 $stories.append('Sorry there was an error.');
             })
@@ -48,4 +36,19 @@ $(function () {
                 $loading.hide();
             });
     };
+
+    function gettingContent(data) {
+        const validData = data.results.filter(item => item.multimedia.length == 5).slice(0, 12);
+        $.each(validData, function (index, value) {
+            let imageUrl = value.multimedia[4].url;
+            let articleUrl = value.url;
+            let storyAbstract = value.abstract;
+            $stories.append(`<a href="${articleUrl}" target=blanck class="story" >
+        <article class="background" style="background-image: url(${imageUrl})">
+        <h2 class="abstract">${storyAbstract}</h2>
+        </article>
+        </a>`)
+        })
+    }
+
 })
