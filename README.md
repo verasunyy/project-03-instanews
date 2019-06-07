@@ -5,7 +5,7 @@ The layout of this website is using flexbox. Adding instan news (data type in JA
 
 <br/>
 
-## Thouthrough
+## Process
 ### 1. Set up and build Gulp
 ### 2. Using SCSS to nesting CSS
 ### 3. Getting API Key from NYT
@@ -36,10 +36,3 @@ The layout of this website is using flexbox. Adding instan news (data type in JA
 ### 4. <select style="width: 6rem"> <option value="section"> Sections ...</option></select> <span> &nbsp; plug-in </span>
  
     need to understant the attribute and properties of the plug-in (and I always fund this part is really difficult that understanding other person's code and sometimes it is time consuming) in order to change the style.
-
-
-
-
-
-# API Key to NYT 
-https://api.nytimes.com/svc/topstories/v2/science.json?api-key=dvQGQmQUORlCX2sUF92DAy1eyxuxGwXD

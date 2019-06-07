@@ -456,7 +456,7 @@ header {
         padding-bottom: 1.5rem; } }
   @media only screen and (min-width: 1000px) {
     .selector-div {
-      padding-left: 4rem; }
+      padding-left: 1rem; }
       .active .selector-div {
         -webkit-box-flex: 0;
             -ms-flex: 0 1 85%;
